@@ -47,7 +47,7 @@ $(document).ready(function() {
   nowuiKit.initNavbarImage();
 
   $navbar = $('.navbar[color-on-scroll]');
-  scroll_distance = $navbar.attr('color-on-scroll') || 500;
+  scroll_distance = $navbar.attr('color-on-scroll') || 200;
 
   // Check if we have the class "navbar-color-on-scroll" then add the function to remove the class "navbar-transparent" so it will transform to a plain color.
 
@@ -185,11 +185,13 @@ nowuiKit = {
       if (transparent) {
         transparent = false;
         $('.navbar[color-on-scroll]').removeClass('navbar-transparent');
+        $('.navbar .navbar-brand').removeClass('d-none');
       }
     } else {
       if (!transparent) {
         transparent = true;
         $('.navbar[color-on-scroll]').addClass('navbar-transparent');
+        $('.navbar .navbar-brand').addClass('d-none');
       }
     }
   }, 17),
